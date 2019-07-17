@@ -80,7 +80,7 @@ def send_new_post(photo_url, account_name):
     keyboard = create_keyboard(account_name)
 
     # send post to channel
-    bot.send_photo(chat_id=CHAT_ID, photo=photo_url, reply_markup=keyboard)
+    bot.send_photo(chat_id="-1001164551645", photo=photo_url, reply_markup=keyboard)
     print(f"=> New post by {account_name} sent")
 
 def create_keyboard(account_name=None):
