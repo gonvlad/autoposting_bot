@@ -19,6 +19,8 @@ def check_for_new_posts():
     # Logging date-time in comand prompt
     print("{0:=^37}".format("Request"))
     print("Date-Time: {0}".format(datetime.datetime.now()))
+    print(s3, type(s3))
+    print(CHAT_ID, type(CHAT_ID))
 
     # path to accounts.json
     path = "./accounts.json"
