@@ -5,12 +5,11 @@ import os
 import requests
 import telebot
 from telebot import types
-from boto.s3.connection import S3Connection
 
 
-s3 = S3Connection(os.environ['S3_KEY'], os.environ['S3_SECRET'])
+TOKEN = os.environ.get("TOKEN")
 CHAT_ID = os.environ.get("CHAT_ID")
-bot = telebot.TeleBot(s3)
+bot = telebot.TeleBot(TOKEN)
 
 def check_for_new_posts():
     '''Check instagram server for new posts
@@ -19,8 +18,6 @@ def check_for_new_posts():
     # Logging date-time in comand prompt
     print("{0:=^37}".format("Request"))
     print("Date-Time: {0}".format(datetime.datetime.now()))
-    print(s3, type(s3))
-    print(CHAT_ID, type(CHAT_ID))
 
     # path to accounts.json
     path = "./accounts.json"
